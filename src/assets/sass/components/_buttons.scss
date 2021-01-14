@@ -1,0 +1,24 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: buttons.scss
+// Location: @/assets/sass/components
+//
+._button {
+  @extend %clicable !optional;
+
+  border: none;
+  outline: none;
+
+  @include display(flex, center, center);
+  @include size(60, auto);
+  @include margin(center);
+  @include background(yellow);
+  border-radius: rem(4);
+
+  text-align: center;
+  text-decoration: none;
+  @include color(grey-900);
+  font-size: rem(24);
+}

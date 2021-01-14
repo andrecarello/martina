@@ -1,0 +1,76 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Pomodoro
+// Description: Nuxt styles
+// File: app.scss
+// Location: @/assets/sass
+//
+
+.form {
+	$self: &;
+
+	@include display(block);
+	@include width(auto);
+
+	&\:group {
+		@include display(block);
+		@include width(auto);
+		position: relative;
+
+		border: rem(1) solid color(grey);
+		border-radius: rem(4);
+		margin: {
+			bottom: rem(10);
+		}
+		padding: {
+			top: rem(5);
+			left: rem(30);
+			right: rem(30);
+			bottom: 0;
+		}
+
+		&-error {
+			border-color: color(danger);
+
+			#{$self} {
+				&\:label {
+					@include color(danger);
+				}
+			}
+		} // error
+	} // group
+
+	&\:label {
+		@include display(block);
+		@include color(grey-600);
+
+		font-size: rem(13);
+		line-height: rem(24);
+		text-transform: uppercase;
+	}
+
+	&\:control {
+		@include display(block);
+		@include size(52, auto);
+
+		border: none !important;
+		outline: none !important;
+		background-color: transparent;
+
+    font-size: rem(32);
+    @include color(grey-900);
+
+    @include placeholder {
+      @include color(grey-500);
+      font-size: rem(32);
+      font-weight: 100;
+    }
+	} // -> control
+
+	&\:message {
+		margin: {
+			top: 0;
+			bottom: rem(10);
+		}
+	} // message
+} // form

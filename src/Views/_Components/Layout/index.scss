@@ -1,0 +1,21 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Martina
+// Description: Refactoring Esportes Radicais
+// File: index.scss
+// Location: @/views/components/container
+//
+
+.layout {
+  &\:default {
+    min-height: 100vh;
+    @include display(flex);
+    @include direction(column);
+
+    padding: {
+      left: rem(30);
+      right: rem(30);
+      bottom: rem(120);
+    }
+  } // default
+} // layout

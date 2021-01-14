@@ -1,0 +1,43 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/components/heder/small
+//
+
+.header {
+  &\:small {
+    @include background(white);
+    @include size(70, screen);
+    @include display(flex, flex-start, center);
+    padding: {
+      left: rem(30);
+    }
+    border-bottom: rem(1) solid color(grey);
+
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+
+    &-icon {
+      @include size(20, 20);
+      stroke: color(green);
+    } // icon
+
+    &-title {
+      outline: none;
+      @include display(block);
+      text-decoration: none;
+      @include color(grey-900);
+      font-size: rem(19);
+      -webkit-tap-highlight-color: transparent;
+      margin: {
+        left: rem(5);
+      }
+    } // text
+  } // small
+} // header
