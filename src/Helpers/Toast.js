@@ -1,6 +1,6 @@
 export const Toast = (type, content, config = {}) => {
 	let base = {
-		html: false || config.html,
+		html: true || config.html,
 		time: 5000 || config.time
 	};
 
@@ -19,10 +19,6 @@ export const Toast = (type, content, config = {}) => {
 	};
 
 	const remove = (el) => el.remove();
-
-
-	// setTimeout(() => container.classList.remove('active'), base.time - 200);
-	// setTimeout(() => remove(), base.time);
 
 	const init = () => {
 

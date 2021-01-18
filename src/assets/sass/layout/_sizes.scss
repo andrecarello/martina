@@ -1,6 +1,6 @@
 //
 // Author: OSTON <ti@oston.io>
-// Name: Pomodoro
+// Name: Martina
 // Description: Nuxt styles
 // File: display.scss
 // Location: @/assets/sass/layout
@@ -25,7 +25,7 @@
 	}
 }
 
-@mixin width($max: screen) {
+@mixin width($max: screen, $flex: none) {
 	$maxWidth: none;
 
 	@if $max != screen AND $max != auto {
@@ -35,7 +35,11 @@
 	width: 100%;
 	@if $max != screen AND $max != auto {
 		max-width: $maxWidth;
-	}
+  }
+
+  @if $flex == flex {
+    flex: 0 0 rem($max);
+  }
 }
 
 @mixin size($height, $width: $height) {

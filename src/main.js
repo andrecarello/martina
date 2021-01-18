@@ -22,10 +22,8 @@ files.keys().map((key) => {
 // -> end: set controllers
 
 // -> begin: project exclusive imports
-import VueFormulate from '@braid/vue-formulate';
-import { pt } from '@braid/vue-formulate-i18n';
-import VueClipboard from 'vue-clipboard2';
-import VueCollapse from 'vue2-collapse/src';
+// import VueFormulate from '@braid/vue-formulate';
+// import { pt } from '@braid/vue-formulate-i18n';
 // -> end: project exclusive imports
 
 // -> begin: settings
@@ -45,11 +43,9 @@ if(ANALYTICS) {
 // import './mock';
 
 // -> begin: uses
-Vue.use(VueFormulate, {
-	plugins: [ pt ]
-});
-Vue.use(VueClipboard);
-Vue.use(VueCollapse);
+// Vue.use(VueFormulate, {
+// 	plugins: [ pt ]
+// });
 // -> end: uses
 
 new Vue({

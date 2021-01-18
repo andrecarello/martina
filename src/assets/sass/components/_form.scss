@@ -1,10 +1,28 @@
 //
 // Author: OSTON <ti@oston.io>
-// Name: Pomodoro
-// Description: Nuxt styles
-// File: app.scss
-// Location: @/assets/sass
+// Name: Martina
+// Description: Refactoring Esportes Radicais
+// File: buttons.scss
+// Location: @/assets/sass/components
 //
+
+%form-control {
+	@include display(block);
+	@include size(52, auto);
+
+	border: none !important;
+	outline: none !important;
+	background-color: transparent;
+
+	font-size: rem(32);
+	@include color(grey-900);
+
+	@include placeholder {
+		@include color(grey-500);
+		font-size: rem(32);
+		font-weight: 100;
+	}
+}
 
 .form {
 	$self: &;
@@ -37,7 +55,7 @@
 					@include color(danger);
 				}
 			}
-		} // error
+    } // error
 	} // group
 
 	&\:label {
@@ -50,21 +68,12 @@
 	}
 
 	&\:control {
-		@include display(block);
-		@include size(52, auto);
+		@extend %form-control;
 
-		border: none !important;
-		outline: none !important;
-		background-color: transparent;
-
-    font-size: rem(32);
-    @include color(grey-900);
-
-    @include placeholder {
-      @include color(grey-500);
-      font-size: rem(32);
-      font-weight: 100;
-    }
+		&-pin {
+      @extend %form-control;
+      text-align: center;
+		}
 	} // -> control
 
 	&\:message {

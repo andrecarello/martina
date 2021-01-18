@@ -1,6 +1,6 @@
 //
 // Author: OSTON <ti@oston.io>
-// Name: Pomodoro
+// Name: Martina
 // Description: Nuxt styles
 // File: animations.scss
 // Location: @/assets/sass/core
@@ -15,7 +15,7 @@
   }
 }
 
-.key{
+.anim{
   &\:rotate {
     animation: rotation 2s infinite ease-in-out;
   }

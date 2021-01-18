@@ -3,19 +3,19 @@
     <div class="helpmenu:content">
       <router-link to="/" class="helpmenu:link">
         <faether-home-icon />
-        INÍCIO
+        <span>INÍCIO</span>
       </router-link>
-      <router-link to="/" class="helpmenu:link">
+      <router-link to="/categorias" class="helpmenu:link">
         <faether-package-icon />
-        CATEGORIAS
+        <span>CATEGORIAS</span>
       </router-link>
-      <router-link to="/" class="helpmenu:link">
+      <router-link to="/explorar" class="helpmenu:link">
         <faether-compass-icon />
-        EXPLORAR
+        <span>EXPLORAR</span>
       </router-link>
-      <router-link to="/" class="helpmenu:link">
+      <router-link to="/conta" class="helpmenu:link">
         <faether-user-icon />
-        CONTA
+        <span>CONTA</span>
       </router-link>
     </div>
   </div>

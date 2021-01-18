@@ -1,10 +1,7 @@
 export const defaultState = {
-	msisdn: '',
-	ddd: '',
+	user: '',
 	pin: '',
-	hash: '',
-	cluster: '',
-	balance: ''
+	token: ''
 };
 
 export default {
@@ -13,35 +10,23 @@ export default {
 	state: defaultState,
 
 	getters: {
-		msisdn: (state) => state.msisdn,
-		ddd: (state) => state.ddd,
+		user: (state) => state.user,
 		pin: (state) => state.pin,
-		hash: (state) => state.hash,
-		cluster: (state) => state.cluster,
-		balance: (state) => state.balance
+		token: (state) => state.token
 	},
 
 	actions: {
 		reset({ commit }) {
 			commit('reset');
 		},
-		saveMsisdn({ commit }, value) {
-			commit('setMsisdn', value);
+		saveUser({ commit }, value) {
+			commit('setUser', value);
 		},
-		saveDdd({ commit }, value) {
-			commit('setDdd', value);
-		},
-		savePin({ commit }, value) {
+		savepin({ commit }, value) {
 			commit('setPin', value);
 		},
-		saveHash({ commit }, value) {
-			commit('setHash', value);
-		},
-		saveCluster({ commit }, value) {
-			commit('setCluster', value);
-		},
-		saveBalance({ commit }, value) {
-			commit('setBalance', value);
+		saveToken({ commit }, value) {
+			commit('setToken', value);
 		}
 	},
 
@@ -51,23 +36,14 @@ export default {
 				state[key] = defaultState[key];
 			});
 		},
-		setMsisdn(state, value) {
-			state.msisdn = value;
-		},
-		setDdd(state, value) {
-			state.ddd = value;
+		setUser(state, value) {
+			state.user = value;
 		},
 		setPin(state, value) {
 			state.pin = value;
 		},
-		setHash(state, value) {
-			state.hash = value;
-		},
-		setCluster(state, value) {
-			state.cluster = value;
-		},
-		setBalance(state, value) {
-			state.balance = value;
+		setToken(state, value) {
+			state.token = value;
 		}
 	}
 };

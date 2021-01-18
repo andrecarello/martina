@@ -9,8 +9,8 @@
 .layout {
   &\:default {
     min-height: 100vh;
-    @include display(flex);
-    @include direction(column);
+    max-width: rem(768);
+    @include margin(center);
 
     padding: {
       left: rem(30);

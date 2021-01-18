@@ -1,0 +1,99 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Martina
+// Description: Refactoring Esportes Radicais
+// File: index.scss
+// Location: @/views/components/article
+//
+._article {
+	margin: {
+		left: rem(-30);
+    right: rem(-30);
+    bottom: rem(64);
+  };
+
+  &\:a {
+    @include display(flex, flex-end, flex-end);
+    @include height(0, screen);
+  } // a
+
+  &\:content {
+    padding: {
+      left: rem(30);
+      right: rem(30);
+    }
+  } // content
+
+	&\:image {
+    $height: ( 400 / 768 ) * 100;
+
+    margin: {
+      bottom: rem(24);
+    }
+    width: 100%;
+    min-height: 100%;
+    height: #{$height}vw;
+    max-height: rem(500);
+
+		img {
+			@include display(block);
+      @include width(screen);
+      min-height: 100%;
+      height: #{$height}vw;
+      max-height: rem(500);
+      object-fit: cover;
+		}
+  } // image
+
+  &\:brand {
+    @include size(115, 87);
+    margin: {
+      bottom: rem(-50)
+    }
+
+		img {
+			@include display(block);
+			@include width(screen);
+		}
+  } // brand
+
+  &\:info {
+    margin: {
+      bottom: rem(5)
+    }
+
+    @include color(grey-600);
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: rem(1);
+    font-size: rem(13);
+
+    min-height: rem(13);
+  } // info
+
+  &\:title {
+    @include color(grey-900);
+    font-size: rem(22);
+    line-height: 1.5;
+    font-weight: 400;
+
+    min-height: rem(32);
+    max-width: calc(100% - 86px);
+
+    margin: {
+      bottom: rem(24)
+    }
+  } // title
+
+  &\:description {
+    font-size: rem(16);
+    @include color(grey-900);
+    line-height: rem(24);
+    font-weight: 400;
+
+    min-height: rem(70);
+    margin: {
+      bottom: rem(32)
+    }
+  } // description
+} // article

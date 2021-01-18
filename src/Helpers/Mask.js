@@ -42,7 +42,10 @@ export const Masks = {
   pin: function (value) {
 		let __regEx = value
 					.replace(/\D/g, '')
-					.replace(/(\d{4})\d+?$/, '$1');
+          .replace(/(\d{1})(\d)/, '$1     $2')
+          .replace(/(\d{1})(\d)/, '$1     $2')
+          .replace(/(\d{1})(\d)/, '$1     $2')
+          .replace(/(\d{1})(\d)+?$/, '$1')
 
 		return __regEx;
   },

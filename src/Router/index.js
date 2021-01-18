@@ -52,16 +52,18 @@ const routes = [
 ];
 
 const router = new VueRouter({
-	mode: 'history',
+  mode: 'history',
+  linkActiveClass: "_is:active",
+  linkExactActiveClass: "_is:exact-active",
 	base: process.env.BASE_URL,
 	routes
 });
 
 router.beforeEach((to, from, next) => {
-	const { hash } = _.model('Auth');
+	const { token } = _.model('Auth');
 
 	if (to.matched.some((record) => record.meta.requiresAuth)) {
-		if (!hash && hash.length < 40) {
+		if (!token) {
 			next({ name: 'Auth' });
 		} else {
 			next();

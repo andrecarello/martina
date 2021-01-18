@@ -1,6 +1,6 @@
 //
 // Author: OSTON <ti@oston.io>
-// Name: Pomodoro
+// Name: Martina
 // Description: Nuxt styles
 // File: global.scss
 // Location: @/assets/sass/layout
@@ -30,4 +30,42 @@ body {
   a {
     text-decoration: none;
   }
+}
+
+
+._g {
+  &\:disabled {
+    pointer-events: none!important;
+    touch-action: none !important;
+    cursor: default;
+  }
+
+  &\:clicable {
+    @extend %clicable;
+  } // clicable
+} // global
+
+// -> animations
+@-webkit-keyframes dots-jump {
+	0% {
+		bottom: 0;
+	}
+	40% {
+		bottom: 6px;
+	}
+	80% {
+		bottom: 0;
+	}
+}
+
+@keyframes dots-jump {
+	0% {
+		bottom: 0;
+	}
+	40% {
+		bottom: 6px;
+	}
+	80% {
+		bottom: 0;
+	}
 }
