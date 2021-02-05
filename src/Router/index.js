@@ -17,6 +17,57 @@ const routes = [
 		}
   },
 
+  {
+    path: '/categorias',
+    name: 'Categories',
+    component: ViewController.load('Categories'),
+    redirect: '/categorias',
+    meta: {
+      KeepAlive: true, // Need to be cached?
+      requiresAuth: true
+    },
+    children: [
+      {
+        path: '',
+        component: ViewController.load('Categories/Base')
+      },
+      {
+        path: ':id?/:slug?',
+				component: ViewController.load('Categories/Part')
+      }
+    ]
+  },
+
+  {
+    path: '/revista/:id/:slug?',
+    name: 'Magazine',
+    component: ViewController.load('Magazine'),
+    meta: {
+      KeepAlive: false, // Need to be cached?
+      requiresAuth: true
+    }
+  },
+
+  {
+    path: '/explorar',
+    name: 'Explorer',
+    component: ViewController.load('Explorer'),
+    meta: {
+      KeepAlive: false, // Need to be cached?
+      requiresAuth: true
+    }
+  },
+
+  {
+    path: '/conta',
+    name: 'Account',
+    component: ViewController.load('Account'),
+    meta: {
+      KeepAlive: true, // Need to be cached?
+      requiresAuth: true
+    }
+  },
+
   // {
   //   path: '/login',
   //   name: 'Auth',
@@ -40,11 +91,11 @@ const routes = [
 			{
         name: 'AuthMsisdn',
         path: '',
-				component: ViewController.load('Auth/Msisdn')
+				component: ViewController.load('Auth/Method')
 			},
 			{
         name: 'AuthPin',
-				path: 'pin/:msisdn',
+				path: 'pin/:msisdn/:hash',
 				component: ViewController.load('Auth/Pin')
       }
 		]

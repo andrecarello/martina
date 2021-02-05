@@ -1,0 +1,29 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Martina
+// Description: Refactoring Esportes Radicais
+// File: index.scss
+// Location: @/Views/Categories/base
+//
+
+.categories {
+  padding-top: rem(30);
+
+  &\:content {
+    padding: {
+      top: rem(15);
+    }
+  } // content
+
+  &\:item {
+    @include display(flex, space-between, center);
+    @include height(57);
+
+    border-top: rem(1) solid color(grey);
+
+
+    text-decoration: none;
+    font-size: rem(20);
+    @include color(grey-900);
+  } // item
+} // categories

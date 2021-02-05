@@ -19,7 +19,7 @@ body {
 	overflow-x: hidden;
 
 	@include font("Simplon");
-	@include scrollbar('vertical', #137cba, #30a500, #f7f7f7, tomato);
+	@include scrollbar('vertical', 5, #137cba, #30a500, #f7f7f7, tomato);
 
 	* {
     @include font("Simplon");
@@ -46,20 +46,17 @@ body {
 } // global
 
 // -> animations
-@-webkit-keyframes dots-jump {
-	0% {
-		bottom: 0;
-	}
-	40% {
-		bottom: 6px;
-	}
-	80% {
-		bottom: 0;
-	}
+@include keyframes(rotate) {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
 }
 
-@keyframes dots-jump {
-	0% {
+@include keyframes(dots-jump) {
+  0% {
 		bottom: 0;
 	}
 	40% {

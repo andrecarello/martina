@@ -12,30 +12,38 @@ class AuthController extends Controller {
 
 	login(type, data) {
 		if (type === 'cpf') this.loginCpf(data);
-	}
+		else if (type === 'msisdn') this.loginMsisdn(data);
+  }
+
+  set(data) {
+    this.dispatch(this._model, data)
+  }
 
 	loginCpf(data) {
-		console.log('login CPF');
-
 		this.dispatch(this._model, {
 			token: hash(180),
-			user: data
+			user: data,
+			method: 'cpf'
 		});
 	}
 
-	// getAll() {
-	// 	this.dispatch(this._loading, 'loading', true);
+	loginMsisdn(data) {
+    this.dispatch(this._model, {
+			token: hash(180),
+      user: data,
+			method: 'msisdn',
+      pinToken: '',
+      pin: ''
+		});
+  }
 
-	// 	this.request('get', this.baseUrl + '/collections?phone=' + this._msisdn)
-	// 		.then(({ data }) => {
-	// 			this.dispatch(this._model, 'collections', data);
-	// 		})
-	// 		.catch((response) => console.error(response))
-	// 		.finally(() => this.dispatch(this._loading, 'loading', false));
-	// }
+  loginPinToken(value) {
+    this.dispatch(this._model, 'pinToken', value)
+  }
 
 	logout() {
-		this._logout(this.model);
+		this._logout(this._model);
+		window.location.reload();
 	}
 }
 

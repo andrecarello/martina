@@ -1,0 +1,47 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Martina
+// Description: Refactoring Esportes Radicais
+// File: index.scss
+// Location: @/views/components/header
+//
+
+.header {
+	&\:account {
+		@include display(flex, flex-start, center);
+
+		margin: {
+			bottom: rem(16);
+		}
+
+		&-brand {
+			@include height(50);
+			margin-right: rem(15);
+		} // brand
+
+		&-text {
+			@include grow(true);
+			font-size: rem(19);
+			font-weight: 100;
+
+			small {
+				@include display(block);
+
+				@include color(grey-600);
+				font-size: rem(12.8);
+				text-transform: uppercase;
+				font-weight: 100;
+				letter-spacing: rem(0.8);
+			} // span
+		} // text
+
+		._btn {
+      @include height(36);
+      @include width(65, flex);
+
+      @include color(grey-600);
+      font-size: rem(16);
+      font-weight: 100;
+		} // button
+	} // account
+} // header

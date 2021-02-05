@@ -1,5 +1,7 @@
 export const defaultState = {
 	magazines: [],
+	magazine: {},
+	magazinePdf: [],
 	highlights: []
 };
 
@@ -10,6 +12,8 @@ export default {
 
 	getters: {
 		magazines: (state) => state.magazines,
+		magazine: (state) => state.magazine,
+		magazinePdf: (state) => state.magazinePdf,
 		highlights: (state) => state.highlights
 	},
 
@@ -19,6 +23,12 @@ export default {
 		},
 		saveMagazines({ commit }, value) {
 			commit('setMagazines', value);
+		},
+		saveMagazine({ commit }, value) {
+			commit('setMagazine', value);
+		},
+		saveMagazinePdf({ commit }, value) {
+			commit('setMagazinePdf', value);
 		},
 		saveHighlights({ commit }, value) {
 			commit('setHighlights', value);
@@ -33,9 +43,15 @@ export default {
 		},
 		setMagazines(state, value) {
 			state.magazines = value;
-    },
-    setHighlights(state, value) {
-      state.highlights = value
-    }
+		},
+		setMagazine(state, value) {
+			state.magazine = value;
+		},
+		setMagazinePdf(state, value) {
+			state.magazinePdf = value;
+		},
+		setHighlights(state, value) {
+			state.highlights = value;
+		}
 	}
 };

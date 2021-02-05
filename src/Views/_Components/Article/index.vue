@@ -2,7 +2,10 @@
   <article class="_article">
     <oston-intersepted-image
       class="_article:image"
-      :source="'https://s3-sa-east-1.amazonaws.com/ost-magazine/' + content.image_highlights"
+      :source="
+        'https://s3-sa-east-1.amazonaws.com/ost-magazine/' +
+        content.image_highlights
+      "
       :alt="content.magazine_name"
     />
 
@@ -10,7 +13,10 @@
       <div class="_article:a">
         <oston-intersepted-image
           class="_article:brand"
-          :source="'https://s3-sa-east-1.amazonaws.com/ost-magazine/' + content.cover_path"
+          :source="
+            'https://s3-sa-east-1.amazonaws.com/ost-magazine/' +
+            content.cover_path
+          "
           alt="Revista"
         />
       </div>
@@ -23,7 +29,13 @@
       <h2 class="_article:title" v-text="content.theme_title" />
       <p class="_article:description" v-text="content.theme_description" />
 
-      <router-link to="/" class="_button _button:yellow">Ler agora</router-link>
+      <router-link
+        :to="'/revista/' + content.id + '/' + slugify(content.magazine_name)"
+        @click.native="select(content.id)"
+        class="_btn _btn:yellow"
+      >
+        Ler agora
+      </router-link>
     </div>
   </article>
 </template>

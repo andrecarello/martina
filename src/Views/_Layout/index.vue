@@ -1,6 +1,8 @@
 <template>
   <div :class="'layout:' + layout">
     <slot></slot>
+
+    <oston-help-menu v-if="menu" />
   </div>
 </template>
 

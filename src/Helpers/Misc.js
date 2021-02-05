@@ -207,3 +207,15 @@ export const hash = (size = 40) => {
 	return result;
 };
 
+
+export const getInArray = (arr, index) => {
+  let res = ''
+
+  arr.forEach(line => {
+    if (line.includes('/' + index + '.pdf')) {
+      res = line
+    }
+  })
+
+  return res;
+}

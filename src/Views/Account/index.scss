@@ -1,0 +1,17 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Martina
+// Description: Refactoring Esportes Radicais
+// File: index.scss
+// Location: @/Views/account
+//
+
+.account {
+  padding: {
+    top: rem(30)
+  }
+
+  &\:container {
+    margin-top: rem(30);
+  } // container
+} // account

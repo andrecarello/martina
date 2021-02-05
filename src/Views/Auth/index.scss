@@ -45,6 +45,10 @@
     }
   } // text
 
+  &\:form {
+    margin-top: rem(30);
+  } // form
+
   &\:links {
     &-vertical {
       @include display(flex, center, center);

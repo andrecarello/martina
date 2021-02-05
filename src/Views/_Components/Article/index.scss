@@ -83,6 +83,7 @@
     margin: {
       bottom: rem(24)
     }
+    @include line-clamp(2)
   } // title
 
   &\:description {
@@ -95,5 +96,7 @@
     margin: {
       bottom: rem(32)
     }
+
+    @include line-clamp(4);
   } // description
 } // article

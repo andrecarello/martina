@@ -6,20 +6,42 @@
 // Location: @/assets/sass/components
 //
 
-._button {
+._btn {
   @extend %clicable !optional;
 
-  border: none;
+  border: rem(1) solid color(grey);
   outline: none;
 
   @include display(flex, center, center);
   @include size(60, auto);
   @include margin(center);
-  @include background(yellow);
+  @include background(white);
   border-radius: rem(4);
 
   text-align: center;
   text-decoration: none;
   @include color(grey-900);
   font-size: rem(24);
-}
+
+  &\:yellow {
+    @include background(yellow);
+    border-color: color(yellow);
+    @include color(grey-900);
+  } // yellow
+
+  &\:loading {
+    pointer-events: none;
+    touch-action: none;
+    opacity: .5;
+
+    span {
+      @include circle(25);
+      border: rem(3) solid color(black);
+      border: {
+        left-color: transparent;
+        bottom-color: transparent;
+      }
+      @include animation(rotate 1s ease infinite);
+    }
+  } // loading
+} // btn

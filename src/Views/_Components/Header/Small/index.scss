@@ -23,9 +23,9 @@
     z-index: 100;
 
 
-    &-icon {
-      @include size(20, 20);
-      stroke: color(green);
+    .feather-icon {
+      font-size: rem(20);
+      @include color(green);
     } // icon
 
     &-title {

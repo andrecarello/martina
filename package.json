@@ -28,6 +28,7 @@
 		"node-sass": "^4.12.0",
 		"sass-loader": "^8.0.0",
 		"vue-clipboard2": "^0.3.1",
+		"vue-pdf": "^4.2.0",
 		"vue-template-compiler": "^2.6.11",
 		"vuex-persist": "^2.2.0"
 	},

@@ -1,21 +1,15 @@
 <template>
   <div class="helpmenu">
     <div class="helpmenu:content">
-      <router-link to="/" class="helpmenu:link">
-        <faether-home-icon />
-        <span>INÍCIO</span>
-      </router-link>
-      <router-link to="/categorias" class="helpmenu:link">
-        <faether-package-icon />
-        <span>CATEGORIAS</span>
-      </router-link>
-      <router-link to="/explorar" class="helpmenu:link">
-        <faether-compass-icon />
-        <span>EXPLORAR</span>
-      </router-link>
-      <router-link to="/conta" class="helpmenu:link">
-        <faether-user-icon />
-        <span>CONTA</span>
+      <router-link
+        v-for="(link, index) in links"
+        :key="index"
+        :to="link.href"
+        class="helpmenu:link"
+        :class="!isActive ? 'helpmenu:link-disabled' : ''"
+      >
+        <feather :name="link.icon" />
+        <span>{{ link.name }}</span>
       </router-link>
     </div>
   </div>

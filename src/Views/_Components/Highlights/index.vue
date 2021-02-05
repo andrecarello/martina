@@ -1,8 +1,10 @@
 <template>
   <section class="_highlights">
-    <div
-      v-for="(highlight, index) in highlights"
+    <router-link
+      v-for="(highlight, index) in content"
       :key="index"
+      :to="'/revista/' + highlight.id + '/' + slugify(highlight.magazine_name)"
+      @click.native="select(highlight.id)"
       class="_highlights:item"
     >
       <oston-intersepted-image
@@ -16,7 +18,9 @@
         <span v-if="highlight.date"> | {{ highlight.date }}</span>
       </p>
       <h2 class="_highlights:title" v-text="highlight.magazine_name" />
-    </div>
+    </router-link>
+
+    <div class="_highlights:spacer"></div>
   </section>
 </template>
 

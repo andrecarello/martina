@@ -34,7 +34,6 @@
         </a>
       </div>
     </form>
-    <oston-help-menu />
   </oston-layout>
 </template>
 

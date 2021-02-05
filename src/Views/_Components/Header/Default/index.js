@@ -1,10 +1,24 @@
-// helpers
-import Image from '@/Views/_Components/Helpers/Image/index.vue';
+import { PROJECT_NAME } from '@/config/Settings';
 
 export default {
-  name: 'OstonHeader',
-  components: {
-    // helpers
-    'oston-image': Image
-  }
-}
+	name: 'OstonHeader',
+
+	props: {
+		showTitle: {
+			type: Boolean,
+			required: false,
+			default: true
+		},
+		showSubtitle: {
+			type: Boolean,
+			required: false,
+			default: true
+		}
+	},
+
+	data() {
+		return {
+			PROJECT_NAME
+		};
+	}
+};

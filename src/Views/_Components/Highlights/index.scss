@@ -10,11 +10,16 @@
   @include display(flex, flex-start, stretch);
   overflow: auto;
   margin-right: rem(-30);
+  @include scrollbar('horizontal', 0);
 
   &\:item {
-    @include width(188, flex);
+    @include width(175, flex);
     margin: {
-      right: rem(16);
+      right: rem(25);
+    }
+
+    padding: {
+      bottom: rem(15);
     }
   } // item
 
@@ -28,7 +33,7 @@
   } // figure
 
   &\:title {
-    font-size: rem(24);
+    font-size: rem(20);
     @include color(grey-900);
     font-weight: 100;
   } // title
@@ -46,4 +51,12 @@
     letter-spacing: rem(1);
     font-size: rem(13);
   } // meta
+
+  &\:spacer {
+    @include height(1);
+    @include width(1, flex);
+    margin: {
+      right: rem(25)
+    };
+  } // spacer
 } // highlights

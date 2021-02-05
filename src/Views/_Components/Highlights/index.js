@@ -1,20 +1,21 @@
-// core
-import { mapGetters } from 'vuex';
-
 // helpers
-import InterseptedImage from '@/Views/_Components/Helpers/InterseptedImage/index.vue';
+import { slugify } from '@/Helpers/Misc';
 
 export default {
   name: 'OstonHighlights',
 
-  components: {
-    'oston-intersepted-image': InterseptedImage
+  props: {
+    content: {
+      type: Object | Array,
+      required: true,
+      default: () => console.log('OstonHighlights: The CONTENT is required')
+    }
   },
 
-  mounted() {
-    this.highlights
-  },
-  computed: mapGetters({
-    highlights: 'HomeModel/highlights'
-  })
-}
+	methods: {
+    slugify,
+    select: function(id) {
+      _.controller('magazine').getById(id);
+    }
+	}
+};

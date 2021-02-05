@@ -1,0 +1,80 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Oi
+// Description: Code for `Conhecimentos e negocios`
+// File: index.scss
+// Location: @/views/components/reader
+//
+
+.reader {
+	&\:menu {
+		position: relative;
+		z-index: 2;
+		@include display(flex, flex-start, stretch);
+		@include height(50);
+		padding: {
+			left: rem(15);
+			right: rem(15);
+		}
+    @include box-shadow(rem(4) rem(4) rem(10) rgba(0,0,0,.16));
+    @include background(grey-900);
+
+		&-link {
+			@include color(white);
+			@include size(50, 40);
+			@include display(flex, center, center);
+
+			.feather-icon {
+				font-size: rem(30)
+			}
+		} // link
+	} // menu
+
+	&\:content {
+		@include margin(center);
+		@include width(768);
+		position: relative;
+	} // content
+
+	&\:pages {
+		@include size(40, auto);
+		@include display(flex, center, center);
+	} // pages
+
+	&\:next,
+	&\:prev {
+		&-disabled {
+			touch-action: none;
+			pointer-events: none;
+
+			opacity: .2;
+		}
+	} // next/prev
+
+	&\:counter {
+		@include display(flex, center, center);
+		@include grow(true);
+
+		@include color(grey);
+	} // counter
+
+	&\:loading {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 3;
+
+		background-color: rgba(255, 255, 255, .6);
+		@include display(flex);
+
+		i {
+			@include display(block);
+      @include height(3);
+      width: 100%;
+			@include background(green);
+			@include box-shadow(rem(2) rem(2) rem(4) rgba(0,0,0,.16));
+		}
+	} // loading
+} // reader

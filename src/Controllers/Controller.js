@@ -28,16 +28,18 @@ class Controller {
 		else if (method === 'delete') return axios.delete(url, data);
 	}
 
-	_dispatch(model, key, value) {
-		this.store.dispatch(_.upperFirst(model) + 'Model/save' + _.upperFirst(key), value);
-	}
-
 	dispatch(model, key, value = null) {
-		if (typeof key === 'object' && value === null) {
-			const obj = key;
-			Object.keys(obj).map((k) => this._dispatch(model, k, obj[k]));
+    if (typeof key === 'object' && value === null) {
+      const data = key;
+			Object.keys(data).map((i) => {
+        this.store.dispatch(_.upperFirst(model) + 'Model/save' + _.upperFirst(i), data[i]);
+			});
 		} else {
-			this._dispatch(model, key, value);
+      if (key === 'reset') {
+        this.store.dispatch(_.upperFirst(model) + 'Model/' + key, value);
+			} else {
+				this.store.dispatch(_.upperFirst(model) + 'Model/save' + _.upperFirst(key), value);
+			}
 		}
 	}
 }

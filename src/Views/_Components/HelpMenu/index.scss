@@ -35,10 +35,10 @@
 		font-size: rem(11);
 		-webkit-tap-highlight-color: transparent;
 
-		svg {
+		.feather-icon {
 			margin-bottom: rem(4);
-			@include size(22);
-    }
+			font-size: rem(22);
+    } // feather-icon
 
     &::before {
       content: "";
@@ -47,16 +47,21 @@
       top: 0;
       @include display(block);
       @include size(3, auto);
-    }
+    } // before
+
+    &-disabled {
+      pointer-events: none;
+      touch-action: none;
+    } // disabled
 
 		&._is {
-			&\:active {
+			&\:exact-active {
         span {
           @include color(green);
         } // span
 
-        svg {
-          stroke: color(green);
+        .feather-icon {
+          color: color(green);
         } // svg
 
         &::before {

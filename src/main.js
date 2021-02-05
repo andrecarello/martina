@@ -24,6 +24,10 @@ files.keys().map((key) => {
 // -> begin: project exclusive imports
 // import VueFormulate from '@braid/vue-formulate';
 // import { pt } from '@braid/vue-formulate-i18n';
+import Icon from '@/Views/_Components/Icon/index.vue';
+import Layout from '@/Views/_Layout/index.vue';
+import InterseptedImage from '@/Views/_Components/Helpers/InterseptedImage/index.vue';
+import Image from '@/Views/_Components/Helpers/Image/index.vue';
 // -> end: project exclusive imports
 
 // -> begin: settings
@@ -34,8 +38,8 @@ if (!localStorage.getItem(ANONYMOUS)) {
 if (INTERACTIONS) {
 	Settings.interactions();
 }
-if(ANALYTICS) {
-  Settings.analytics();
+if (ANALYTICS) {
+	Settings.analytics();
 }
 // -> end: settings
 
@@ -46,6 +50,10 @@ if(ANALYTICS) {
 // Vue.use(VueFormulate, {
 // 	plugins: [ pt ]
 // });
+Vue.component('feather', Icon);
+Vue.component('oston-layout', Layout)
+Vue.component('oston-image', Image);
+Vue.component('oston-intersepted-image', InterseptedImage);
 // -> end: uses
 
 new Vue({

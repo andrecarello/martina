@@ -1,13 +1,32 @@
-import { HomeIcon, CompassIcon, UserIcon, PackageIcon } from 'vue-feather-icons'
-
-
 export default {
-  name: 'HelpMenu',
+	name: 'HelpMenu',
 
-  components: {
-    'faether-home-icon': HomeIcon,
-    'faether-compass-icon': CompassIcon,
-    'faether-user-icon': UserIcon,
-    'faether-package-icon': PackageIcon
-  }
-}
+	data() {
+		return {
+      isActive: _.model('auth').token,
+
+      links: [
+        {
+          href: '/',
+          name: 'INÍCIO',
+          icon: 'home'
+        },
+        {
+          href: '/categorias',
+          name: 'CATEGORIAS',
+          icon: 'package'
+        },
+        {
+          href: '/explorar',
+          name: 'EXPLORAR',
+          icon: 'compass'
+        },
+        {
+          href: '/conta',
+          name: 'CONTA',
+          icon: 'user'
+        }
+      ]
+		};
+	}
+};

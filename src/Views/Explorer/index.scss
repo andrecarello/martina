@@ -1,0 +1,158 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Martina
+// Description: Refactoring Esportes Radicais
+// File: index.scss
+// Location: @/Views/explorer
+//
+
+.explorer {
+  padding: {
+    top: rem(100);
+    left: rem(0);
+    right: rem(0);
+  }
+
+  ._btn {
+    margin-top: rem(20);
+  } // btn
+
+  &\:container {
+    padding: {
+      left: rem(30);
+      right: rem(30);
+    }
+  } // container
+
+  &\:rule {
+    border: none;
+    @include size(1, auto);
+    background-color: color(grey);
+    margin: {
+      top: rem(30);
+      left: rem(-30);
+      right: rem(-30);
+      bottom: rem(30);
+    };
+    width: auto;
+  } // rule
+
+  &\:title {
+    font-size: rem(13);
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: rem(1);
+    line-height: rem(32);
+
+    margin-bottom: rem(15);
+  } // title
+
+	&\:form {
+		position: fixed;
+		top: 0;
+		left: 0;
+    right: 0;
+    z-index: 20;
+		@include height(70);
+		@include display(flex, flex-start, center);
+
+		border-bottom: rem(1) solid color(grey);
+		@include background(white);
+		overflow: hidden;
+
+		padding: {
+			left: rem(30);
+			right: rem(30);
+		}
+
+		input {
+			@include size(70, auto);
+			@include display(block);
+			border: none;
+
+			padding: {
+				left: rem(10);
+				right: rem(10);
+			}
+
+			font-size: rem(19);
+			@include color(grey-900);
+		} // input
+
+		button {
+			border: none;
+			@include background(white);
+		}
+
+		.feather-icon {
+			@include color(grey-600);
+			font-size: rem(20);
+
+			&.fe-x {
+				@include color(danger);
+			}
+		}
+	} // form
+
+	&\:result {
+		@include grid(repeat(auto-fill, minmax(128px, 1fr)), rem(16));
+	} // result
+
+	&\:article {
+		&-figure {
+      margin-bottom: rem(8);
+
+			img {
+				@include display(block);
+				@include width(auto);
+			} // img
+		} // figure
+
+		&-info {
+      @include color(grey-600);
+			text-transform: uppercase;
+			line-height: 1;
+			font-size: rem(13);
+			letter-spacing: rem(1);
+      margin-bottom: rem(5);
+      @include height(12, min);
+    } // info
+
+    &-title {
+      line-height:rem(32);
+      @include color(grey-900);
+      font-size: rem(16);
+      font-weight: 400;
+      @include line-clamp(2);
+    } // title
+  } // article
+
+  &\:items {
+    margin-bottom: rem(30);
+
+    &:last-of-type {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    ._highlights {
+      &\:item {
+        @include width(128, flex);
+        margin-right: rem(16);
+      } // item
+
+      &\:figure {
+        @include size(170, 128)
+      } // figure
+
+      &\:meta {
+        font-size: rem(11);
+      } // meta
+
+      &\:title {
+        font-size: rem(16);
+        @include line-clamp(1);
+      } // title
+    } // highligths
+  } // items
+} // explorer

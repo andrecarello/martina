@@ -1,0 +1,60 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Martina
+// Description: Refactoring Esportes Radicais
+// File: index.scss
+// Location: @/views/skeletons/magazines
+//
+
+._skeleton {
+	&\:article {
+		margin: {
+			left: rem(-30);
+			right: rem(-30);
+			bottom: rem(64);
+		}
+
+		&-row {
+			@include background(grey);
+			border-radius: rem(4);
+
+			&:nth-child(1) {
+				$height: (400 / 768) * 100;
+
+				margin-bottom: rem(24);
+				min-height: 100%;
+				height: #{$height}vw;
+				max-height: rem(500);
+			}
+
+			&:nth-child(2) {
+				margin: {
+					left: rem(30);
+					right: rem(30);
+					bottom: rem(5);
+				}
+
+				@include height(13);
+			}
+
+			&:nth-child(3) {
+				@include size(33, 150);
+
+				margin: {
+					left: rem(30);
+					right: rem(30);
+					bottom: rem(24);
+				}
+			}
+
+			&:nth-child(4) {
+				@include size(96, 250);
+				margin: {
+					left: rem(30);
+					right: rem(30);
+					bottom: rem(32);
+				}
+			}
+		}
+	} // article
+} // skeleton

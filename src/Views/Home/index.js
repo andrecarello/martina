@@ -4,36 +4,34 @@ import { mapGetters } from 'vuex';
 import Settings from '@/config/Settings';
 
 // components
-import Layout from '@/Views/_Components/Layout/index.vue';
 import Header from '@/Views/_Components/Header/Default/index.vue';
 import Article from '@/Views/_Components/Article/index.vue';
 import Highlights from '@/Views/_Components/Highlights/index.vue';
-import HelpMenu from '@/Views/_Components/HelpMenu/index.vue';
+
+// skeleton
+import Skeleton from '@/Views/_Skeletons/Magazines/index.vue';
 
 export default {
 	name: 'Home',
 
 	components: {
-		'oston-layout': Layout,
 		'oston-header': Header,
 		'oston-article': Article,
-    'oston-highlights': Highlights,
-    'oston-help-menu': HelpMenu
+		'oston-highlights': Highlights,
+
+		skeleton: Skeleton
 	},
 
 	mounted() {
 		Settings.title('Home');
-		_.controller('home').getMagazines();
-		_.controller('home').getHighlights();
-
-		console.log(this.magazines);
+		_.controller('magazine').getAll();
+		_.controller('magazine').getAllTheme();
+		_.controller('category').getAll();
 	},
 
-	// computed: {
-	// 	...mapGetters('HomeModel', [ 'magazines' ])
-	// }
 	computed: mapGetters({
-		magazines: 'HomeModel/magazines',
-		highlights: 'HomeModel/highlights'
+		magazines: 'MagazineModel/magazines',
+		highlights: 'MagazineModel/highlights',
+		loading: 'LoadingModel/loading'
 	})
 };
